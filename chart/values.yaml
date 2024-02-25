@@ -1,0 +1,27 @@
+namespace:
+  name: namespace1
+
+
+services:
+  - name: service-a
+    appName: service-a
+    deploymentName: service-a-deployment
+    image: aloniyovel1020/a-flask-image:final
+    port: 5001
+    servicePort: 80
+    replicas: 2
+    path: /service-a
+  - name: service-b
+    appName: service-b
+    deploymentName: service-b-deployment
+    image: aloniyovel1020/service-b-app:final
+    port: 5000
+    servicePort: 80
+    replicas: 2
+    path: /service-b
+
+ingress:
+  name: myapps-ingress
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
