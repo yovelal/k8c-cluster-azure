@@ -31,3 +31,8 @@ It utilizes Helm charts for easy and consistent application deployment and manag
 1. Retrieve the IP address for accessing the applications: kubectl get ingress -n namespace1
    The IP address is located in the "ADDRESS" field.
 2. You can access the applications through: `http://<ip>/service-a` and `http://<ip>/service-b`
+
+
+
+![image](https://github.com/yovelal/k8c-cluster-azure/assets/100790447/a370cb23-c307-45f0-a3e0-03c80fb168e5)
+
