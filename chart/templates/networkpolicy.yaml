@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: isolate-service-a-from-b
+  namespace: {{ $.Values.namespace.name }}
+spec:
+  podSelector:
+    matchLabels:
+      app: service-a
+  ingress:
+    - { }
+  egress:
+    - to:
+      - podSelector:
+          matchExpressions:
+           - key: app
+             operator: NotIn
+             values:
+             - service-b
